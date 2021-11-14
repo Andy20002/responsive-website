@@ -44,6 +44,19 @@ navbarToggleBtn.addEventListener("click", ()=>{
     navbarMenu.classList.toggle("open");
 });
 
+//arrow up
+const homeMainHeight = document.querySelector("#home").getBoundingClientRect().height;
+const arrowup = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+    if(window.scrollY/homeHeight > 0.5)
+        arrowup.classList.add("visible");
+    else
+        arrowup.classList.remove("visible");
+});
+arrowup.addEventListener("click", () => {
+    scrollIntoView("#home");
+});
+
 
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
